@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-2">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand fw-bold fs-4" href="#">
+        <a class="navbar-brand fw-bold fs-4" href="{% url 'index' %}">
             <i class="fas fa-robot me-2"></i> AI Learning Hub
         </a>
 
@@ -17,26 +17,33 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-white" href="#">Home</a>
+                    <a class="nav-link text-white" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-white" href="#">Courses</a>
+                    <a class="nav-link text-white" href="{% url 'courses' %}">Courses</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-white" href="#">Resources</a>
+                    <a class="nav-link text-white" href="{% url 'resources' %}">Resources</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-white" href="#">Blog</a>
+                    <a class="nav-link text-white" href="{% url 'blog' %}">Blog</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-white" href="#">Contact</a>
+                    <a class="nav-link text-white" href="{% url 'contact' %}">Contact</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link text-white" href="{% url 'sidebar' %}">Dashboard</a>
+                    <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="{% url 'dashboard' %}">Dashboard</a>
                 </li>
 
-                <li class="nav-item mx-2">
-                    <a href="#" class="nav-link text-white">Login</a>
+                <li class="nav-item ">
+                    <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="{% url 'signup' %}" class="nav-link text-white">Sign Up</a>
                 </li>
             </ul>
         </div>

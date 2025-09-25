@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block sidebar_title %} Blog {% endblock sidebar_title %}
+
+
+{% block content %}
+
+
+<div class="blog-section py-5 bg-light">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark">Our Blog</h2>
+            <p class="text-muted">Stay updated with the latest trends in AI, Machine Learning, and Data Science.</p>
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="row g-4">
+
+            <!-- Blog Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card blog-card shadow-sm border-0 h-100">
+                    <img src="#" class="card-img-top rounded-top" alt="AI Blog">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Introduction to Artificial Intelligence</h5>
+                        <p class="card-text text-muted">
+                            Learn the basics of Artificial Intelligence and how it's shaping the future of technology
+                            and society.
+                        </p>
+                        <a href="#" class="btn btn-gradient btn-sm rounded-pill">Read More</a>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <small class="text-muted"><i class="fas fa-calendar-alt me-2"></i> Sep 20, 2025</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card blog-card shadow-sm border-0 h-100">
+                    <img src="#" class="card-img-top rounded-top" alt="Machine Learning Blog">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Getting Started with Machine Learning</h5>
+                        <p class="card-text text-muted">
+                            Explore supervised and unsupervised learning, model training, and how ML is applied in real
+                            life.
+                        </p>
+                        <a href="#" class="btn btn-gradient btn-sm rounded-pill">Read More</a>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <small class="text-muted"><i class="fas fa-calendar-alt me-2"></i> Sep 15, 2025</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card blog-card shadow-sm border-0 h-100">
+                    <img src="#" class="card-img-top rounded-top" alt="Data Science Blog">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Data Science for Beginners</h5>
+                        <p class="card-text text-muted">
+                            Understand the fundamentals of data science, data cleaning, visualization, and predictive
+                            modeling.
+                        </p>
+                        <a href="#" class="btn btn-gradient btn-sm rounded-pill">Read More</a>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <small class="text-muted"><i class="fas fa-calendar-alt me-2"></i> Sep 10, 2025</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

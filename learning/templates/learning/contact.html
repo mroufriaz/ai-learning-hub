@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block sidebar_title %} Contact {% endblock sidebar_title %}
+
+
+{% block content %}
+
+
+<div class="contact-section py-5 bg-light">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Get in Touch</h2>
+      <p class="text-muted">We’d love to hear from you. Send us a message and we’ll respond as soon as possible.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Contact Info -->
+      <div class="col-md-5">
+        <div class="contact-info p-4 bg-white shadow-sm rounded h-100">
+          <h5 class="fw-bold mb-3">Contact Information</h5>
+          <p class="text-muted"><i class="fas fa-map-marker-alt me-2 text-primary"></i>123 AI Street, Lahore, Pakistan
+          </p>
+          <p class="text-muted"><i class="fas fa-envelope me-2 text-primary"></i>support@ailearninghub.com</p>
+          <p class="text-muted"><i class="fas fa-phone me-2 text-primary"></i>+92 300 1234567</p>
+
+          <div class="social-links mt-4">
+            <a href="#" class="me-3 text-dark"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="me-3 text-dark"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="me-3 text-dark"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="#" class="text-dark"><i class="fab fa-github fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-7">
+        <div class="p-4 bg-white shadow-sm rounded">
+          <h5 class="fw-bold mb-3">Send a Message</h5>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Enter subject">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Write your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gradient px-4 py-2 rounded-pill">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}

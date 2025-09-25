@@ -8,6 +8,34 @@ def index(request ):
     return render( request, 'learning/index.html')
 
 
+def dashboard(request):
+    return render( request, 'learning/dashboard.html')
 
-def sidebar(request):
-    return render( request, 'learning/sidebar.html')
+
+def courses(request):
+    return render( request, 'learning/courses.html')
+
+
+def resources(request):
+    return render( request, 'learning/resources.html')
+
+
+def blog(request):
+    return render( request, 'learning/blog.html')
+
+
+def contact(request):
+    return render( request, 'learning/contact.html')
+
+def about(request):
+    return render( request, 'learning/about.html')
+
+
+def signup(request):
+    return render( request, 'learning/signup.html')
+
+
+def login(request):
+    return render( request, 'learning/login.html')
+
+

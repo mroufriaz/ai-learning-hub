@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block sidebar_title %} Resources {% endblock sidebar_title %}
+
+
+{% block content %}
+
+
+<div class="resources-section py-5 bg-light">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Learning Resources</h2>
+      <p class="text-muted">Access free materials to strengthen your journey in AI, Machine Learning, and Data Science.
+      </p>
+    </div>
+
+    <!-- Resource Cards -->
+    <div class="row g-4">
+
+      <!-- Resource 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card resource-card shadow-sm border-0 h-100">
+          <img src="{% static 'images/resource1.jpg' %}" class="card-img-top" alt="Ebook">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">AI Fundamentals (Free eBook)</h5>
+            <p class="card-text text-muted">
+              Download our beginner-friendly eBook to understand the basics of Artificial Intelligence.
+            </p>
+            <a href="#" class="btn btn-gradient btn-sm rounded-pill">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card resource-card shadow-sm border-0 h-100">
+          <img src="{% static 'images/resource2.jpg' %}" class="card-img-top" alt="Tutorial">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Python for Data Science (Video Tutorial)</h5>
+            <p class="card-text text-muted">
+              Learn Python for Data Science through our step-by-step free video tutorials.
+            </p>
+            <a href="#" class="btn btn-gradient btn-sm rounded-pill">Watch Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card resource-card shadow-sm border-0 h-100">
+          <img src="{% static 'images/resource3.jpg' %}" class="card-img-top" alt="Tool">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Top 10 AI Tools (Guide)</h5>
+            <p class="card-text text-muted">
+              Discover the most powerful AI & ML tools you can use today to improve your projects.
+            </p>
+            <a href="#" class="btn btn-gradient btn-sm rounded-pill">Explore</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock content %}

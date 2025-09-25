@@ -43,24 +43,25 @@
 
 /* Gradient Button */
 .btn-gradient {
-  background: linear-gradient(90deg, #6610f2, #b84ef5);
-  color: #fff !important;
-  transition: 0.3s ease;
+    background: linear-gradient(90deg, #6610f2, #b84ef5);
+    color: #fff !important;
+    transition: 0.3s ease;
 }
+
 .btn-gradient:hover {
-  background: linear-gradient(90deg, #b84ef5, #6610f2);
-  box-shadow: 0 0 10px rgba(102, 16, 242, 0.6);
+    background: linear-gradient(90deg, #b84ef5, #6610f2);
+    box-shadow: 0 0 10px rgba(102, 16, 242, 0.6);
 }
 
 /* Gradient Text */
 #typing-text {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #6610f2, #b84ef5, #6610f2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  white-space: nowrap;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #6610f2, #b84ef5, #6610f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 
@@ -107,50 +108,321 @@
     transform: scale(1.2);
 }
 
- .testimonials {
+.testimonials {
     background: linear-gradient(135deg, #f8f9fa, #e9f2ff);
     border-radius: 12px;
-  }
+}
 
-  .testimonials h2 {
+.testimonials h2 {
     font-size: 2.2rem;
     color: #222;
-  }
+}
 
-  .testimonial-card {
+.testimonial-card {
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .testimonial-card:hover {
+.testimonial-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
 
-  .quote-icon {
+.quote-icon {
     font-size: 2rem;
     color: #0d6efd;
-  }
+}
 
-  .testimonial-card img {
+.testimonial-card img {
     border: 3px solid #0d6efd;
     padding: 3px;
     transition: 0.3s;
-  }
+}
 
-  .testimonial-card:hover img {
+.testimonial-card:hover img {
     transform: scale(1.1);
     border-color: #0a58ca;
-  }
+}
 
-  .client-info h6 {
+.client-info h6 {
     color: #0d6efd;
-  }
+}
 
+/* Cources */
+/* Course Cards */
+.course-card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.course-card img {
+    transition: transform 0.4s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-card:hover img {
+    transform: scale(1.05);
+}
+
+.course-card h5 {
+    color: #333;
+}
+
+
+/* About Section */
+.about-section h2 {
+    font-size: 2.2rem;
+}
+
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.about-section ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(90deg, #6610f2, #b84ef5);
+    color: #fff !important;
+    transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #b84ef5, #6610f2);
+    box-shadow: 0 0 12px rgba(102, 16, 242, 0.6);
+}
+
+
+/* Blog Section */
+.blog-section h2 {
+    font-size: 2rem;
+}
+
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(90deg, #6610f2, #b84ef5);
+    color: #fff !important;
+    transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #b84ef5, #6610f2);
+    box-shadow: 0 0 10px rgba(102, 16, 242, 0.6);
+}
+
+
+
+/* Resources Section */
+.resources-section h2 {
+    font-size: 2rem;
+}
+
+.resource-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card img {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Gradient Button (reuse global) */
+.btn-gradient {
+    background: linear-gradient(90deg, #6610f2, #b84ef5);
+    color: #fff !important;
+    transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #b84ef5, #6610f2);
+    box-shadow: 0 0 10px rgba(102, 16, 242, 0.6);
+}
+
+
+/* Contact Section */
+.contact-section h2 {
+    font-size: 2rem;
+}
+
+.contact-info {
+    border-left: 5px solid #6610f2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info p i {
+    color: #6610f2;
+}
+
+.form-control:focus {
+    border-color: #6610f2;
+    box-shadow: 0 0 5px rgba(102, 16, 242, 0.3);
+}
+
+/* Social icons */
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #6610f2;
+}
+
+
+/* Signup Section */
+.signup-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.signup-section h3 {
+    color: #333;
+}
+
+.form-control:focus {
+    border-color: #6610f2;
+    box-shadow: 0 0 5px rgba(102, 16, 242, 0.3);
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #6610f2, #b84ef5);
+    color: #fff !important;
+    transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #b84ef5, #6610f2);
+    box-shadow: 0 0 10px rgba(102, 16, 242, 0.6);
+}
+
+/* Social login buttons */
+.btn-outline-dark {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: #6610f2;
+    color: #fff;
+}
+
+
+
+/* Wrapper for centering */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 420px;
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #6610f2;
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #6610f2, #b84ef5);
+    color: #fff !important;
+    border-radius: 30px;
+    padding: 12px;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #b84ef5, #6610f2);
+    box-shadow: 0 0 12px rgba(102, 16, 242, 0.6);
+}
+
+.extra-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.extra-links a {
+    color: #6610f2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
 
 
 /* Shimmer effect for underline */
