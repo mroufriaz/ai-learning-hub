@@ -1,0 +1,52 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block sidebar_title %}{% endblock sidebar_title %}Dashboard |</title>
+    {% endblock styles %}
+    {% endblock head %}
+
+</head>
+
+<body>
+    {% block body %}
+    <!-- Sidebar -->
+    <div class="d-flex">
+       {% block sidebar %}
+        {% include 'includes/sidebar_nav.html' %}
+       {% endblock sidebar %}
+        <!-- Main Content -->
+        <div class="content w-100">
+            {% block sidebar_content %}
+            {% include 'includes/sidebar_content.html' %}
+            {% endblock sidebar_content %}
+        </div>
+    </div>
+
+
+    {% block script %}
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    {% endblock script %}
+
+
+    {% endblock body %}
+
+</body>
+
+</html>

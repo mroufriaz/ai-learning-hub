@@ -1,0 +1,40 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-2">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold fs-4" href="#">
+            <i class="fas fa-robot me-2"></i> AI Learning Hub
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="#">Courses</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="#">Resources</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="#">Blog</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="#">Contact</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link text-white" href="{% url 'sidebar' %}">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
