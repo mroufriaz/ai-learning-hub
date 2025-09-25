@@ -6,76 +6,166 @@
 
 {% block content %}
 <div class="container">
-    <div>
-        <div class="jumbotron text-center mt-4">
-            <h1 class="display-4">Welcome to AI & ML Learning Hub</h1>
-            <p class="lead">Your gateway to mastering Artificial Intelligence and Machine Learning.</p>
-            <p>Explore our courses, tutorials, and resources to enhance your skills.</p>
-            <a class="btn btn-primary " href="#" role="button">Get Started</a>
-        </div>
-    </div>
-    <div class="row">
+<!-- 🎉 Welcome Header -->
+<header class="bg-light text-dark text-center py-5 rounded">
+  <div class="container">
+    <h1 class="display-4 fw-bold">
+      <span id="typing-text"></span>
+    </h1>
+    <p class="lead mt-3" id="subtitle" style="opacity:0;">
+      Learn Artificial Intelligence, Machine Learning, and Data Science with expert-led courses.
+    </p>
+    <a href="#courses" class="btn btn-gradient px-4 py-2 mt-3 rounded-pill">Explore Courses</a>
+  </div>
+</header>
+    
 
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Courses</h5>
-                    <p class="card-text">Explore a variety of AI and ML courses designed for all skill levels.</p>
-                    <a href="#" class="btn btn-primary">Browse Courses</a>
+
+    <!-- 📚 Courses Section -->
+    <section id="courses" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Our Popular Courses</h2>
+            <div class="row g-4">
+                <!-- Course 1 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-4 text-center h-100">
+                        <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">Introduction to AI</h5>
+                        <p class="text-muted">Understand the basics of AI, history, applications, and future scope.</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill mt-auto">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-4 text-center h-100">
+                        <i class="fas fa-robot fa-3x text-success mb-3"></i>
+                        <h5 class="fw-bold">Machine Learning</h5>
+                        <p class="text-muted">Hands-on training with supervised & unsupervised learning techniques.</p>
+                        <a href="#" class="btn btn-outline-success rounded-pill mt-auto">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-4 text-center h-100">
+                        <i class="fas fa-database fa-3x text-warning mb-3"></i>
+                        <h5 class="fw-bold">Data Science</h5>
+                        <p class="text-muted">Learn data wrangling, visualization, and analytics with Python.</p>
+                        <a href="#" class="btn btn-outline-warning rounded-pill mt-auto">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Courses</h5>
-                    <p class="card-text">Explore a variety of AI and ML courses designed for all skill levels.</p>
-                    <a href="#" class="btn btn-primary">Browse Courses</a>
+        <!-- Why Choose Us Section -->
+        <div class="why-choose-us py-5 mt-4 rounded">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-4">Why Choose Us?</h2>
+                <p class="text-muted mb-5">We provide everything you need to excel in AI learning, from expert guidance
+                    to hands-on projects.</p>
+
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-4">
+                        <div class="choose-card shadow-sm p-4 h-100">
+                            <i class="fas fa-chalkboard-teacher fa-3x text-primary mb-3"></i>
+                            <h5 class="fw-bold">Expert Instructors</h5>
+                            <p class="text-muted">Learn from industry professionals with years of experience in AI and
+                                Machine Learning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4">
+                        <div class="choose-card shadow-sm p-4 h-100">
+                            <i class="fas fa-laptop-code fa-3x text-success mb-3"></i>
+                            <h5 class="fw-bold">Hands-On Learning</h5>
+                            <p class="text-muted">Work on real-world projects and gain practical skills to prepare you
+                                for your career.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-4">
+                        <div class="choose-card shadow-sm p-4 h-100">
+                            <i class="fas fa-certificate fa-3x text-warning mb-3"></i>
+                            <h5 class="fw-bold">Certification</h5>
+                            <p class="text-muted">Earn recognized certificates that add value to your professional
+                                profile.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Courses</h5>
-                    <p class="card-text">Explore a variety of AI and ML courses designed for all skill levels.</p>
-                    <a href="#" class="btn btn-primary">Browse Courses</a>
+        <!-- Testimonials Section -->
+        <div class="testimonials py-5 mt-4">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">What Our Clients Say</h2>
+                    <p class="text-muted">Trusted by professionals worldwide</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Testimonial 1 -->
+                    <div class="col-md-4">
+                        <div class="testimonial-card p-4 h-100 text-center">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="fst-italic text-muted">
+                                "This service has exceeded my expectations. The team is professional and reliable."
+                            </p>
+                            <div class="client-info mt-4">
+                                <img src="https://via.placeholder.com/80" class="rounded-circle mb-2" alt="Client">
+                                <h6 class="fw-bold mb-0">Sarah Johnson</h6>
+                                <small class="text-muted">Marketing Manager</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="col-md-4">
+                        <div class="testimonial-card p-4 h-100 text-center">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="fst-italic text-muted">
+                                "Amazing experience! I highly recommend them to anyone looking for quality work."
+                            </p>
+                            <div class="client-info mt-4">
+                                <img src="https://via.placeholder.com/80" class="rounded-circle mb-2" alt="Client">
+                                <h6 class="fw-bold mb-0">Michael Smith</h6>
+                                <small class="text-muted">Entrepreneur</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="col-md-4">
+                        <div class="testimonial-card p-4 h-100 text-center">
+                            <div class="quote-icon mb-3">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="fst-italic text-muted">
+                                "They delivered exactly what I needed, on time and with great attention to detail."
+                            </p>
+                            <div class="client-info mt-4">
+                                <img src="https://via.placeholder.com/80" class="rounded-circle mb-2" alt="Client">
+                                <h6 class="fw-bold mb-0">Emma Williams</h6>
+                                <small class="text-muted">Software Engineer</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Courses</h5>
-                    <p class="card-text">Explore a variety of AI and ML courses designed for all skill levels.</p>
-                    <a href="#" class="btn btn-primary">Browse Courses</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Courses</h5>
-                    <p class="card-text">Explore a variety of AI and ML courses designed for all skill levels.</p>
-                    <a href="#" class="btn btn-primary">Browse Courses</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Courses</h5>
-                    <p class="card-text">Explore a variety of AI and ML courses designed for all skill levels.</p>
-                    <a href="#" class="btn btn-primary">Browse Courses</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
+
 
 
     {% endblock content %}
