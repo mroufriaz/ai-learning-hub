@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ course.title }} | Course Detail {% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- Left Side (Course Image & Details) -->
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                {% if course.image %}
+                <img src="{{ course.image.url }}" class="card-img-top img-fluid" alt="{{ course.title }}">
+                {% endif %}
+                <div class="card-body p-4">
+                    <h2 class="fw-bold mb-3 text-dark">{{ course.title }}</h2>
+                    <p class="text-muted mb-3">
+                        Category: <span class="badge bg-primary bg-gradient px-3 py-1 rounded-pill">{{ course.category.name }}</span>
+                    </p>
+                    <h3 class="fw-bold text-success mb-3">Rs. {{ course.price }}</h3>
+                    <p class="card-text lh-lg text-secondary">{{ course.description }}</p>
+                </div>
+            </div>
+
+            <!-- Course Points -->
+            <div class="mt-5">
+                <h4 class="fw-bold mb-3">What You’ll Learn</h4>
+                <ul class="list-group list-group-flush rounded shadow-sm">
+                    {% for point in course.points.all %}
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill text-success me-2 fs-5"></i>
+                            <span class="fw-medium text-dark">{{ point.text }}</span>
+                        </li>
+                    {% empty %}
+                        <li class="list-group-item text-muted">No key points added yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center my-5">
+                <a href="#" class="btn btn-gradient px-5 py-3 fw-bold rounded-pill shadow-lg">🚀 Enroll Now & Start Learning</a>
+            </div>
+        </div>
+
+        <!-- Right Side (Quick Info + Related Courses) -->
+        <div class="col-lg-4">
+            <!-- Quick Info -->
+            <div class="card shadow-lg border-0 p-4 rounded-4 mb-4">
+                <h5 class="fw-bold mb-3 text-primary">📌 Course Overview</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-3"><strong>⏳ Duration:</strong> {{ course.get_duration_display }}</li>
+                    <li class="mb-3"><strong>📈 Level:</strong> {{ course.get_level_display }}</li>
+                    <li class="mb-3"><strong>👨‍🏫 Instructor:</strong> {{ course.instructor }}</li>
+                    <li class="mb-3"><strong>🌐 Language:</strong> English / Urdu</li>
+                    <li><strong>📅 Created on:</strong> {{ course.created_at|date:"F d, Y" }}</li>
+                </ul>
+                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Join This Course</a>
+            </div>
+
+            <!-- Related Courses -->
+            <div class="card shadow-lg border-0 p-4 rounded-4">
+                <h5 class="fw-bold mb-3 text-primary">📚 Related Courses</h5>
+                <ul class="list-unstyled">
+                    {% for related in related_courses %}
+                        <li class="mb-3">
+                            <a href="{% url 'course_detail' related.id %}" class="text-decoration-none text-dark fw-medium d-flex align-items-center">
+                                <i class="bi bi-arrow-right-circle-fill text-primary me-2 fs-5"></i> 
+                                {{ related.title }}
+                            </a>
+                        </li>
+                    {% empty %}
+                        <li class="text-muted">No related courses found.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -12,9 +12,6 @@ def dashboard(request):
     return render( request, 'learning/dashboard.html')
 
 
-def courses(request):
-    return render( request, 'learning/courses.html')
-
 
 def resources(request):
     return render( request, 'learning/resources.html')
