@@ -15,20 +15,32 @@
 
     <!-- Courses Grid -->
     <div class="row g-4">
-        {% for course in courses %}
-      <!-- Course Card 1 -->
+      {% for course in courses %}
+      <!-- Course Card -->
       <div class="col-md-4">
         <div class="card course-card shadow-sm border-0 h-100">
-          <img src="{{ course.image.url }}" class="card-img-top" alt="">
+          <!-- Course Image with Link -->
+          <a href="{% url 'course_detail' course.id %}">
+            <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+          </a>
+
           <div class="card-body">
-            <h5 class="fw-bold">{{ course.title }}</h5>
+            <!-- Title with Link -->
+            <h5 class="fw-bold">
+              <a href="{% url 'course_detail' course.id %}" class="text-decoration-none text-dark">
+                {{ course.title }}
+              </a>
+            </h5>
+
             <p class="text-muted small">{{ course.short_description }}</p>
+
             <ul class="list-unstyled mb-4">
-          <li><strong>Instructor:</strong> {{ course.instructor }}</li>
-          <li><strong>Duration:</strong> {{ course.duration }}</li>
-          <li><strong>Level:</strong> {{ course.level }}</li>
-          <li><strong>Category:</strong> {{ course.category.name }}</li>
-        </ul>
+              <li><strong>Instructor:</strong> {{ course.instructor }}</li>
+              <li><strong>Duration:</strong> {{ course.duration }}</li>
+              <li><strong>Level:</strong> {{ course.level }}</li>
+              <li><strong>Category:</strong> {{ course.category.name }}</li>
+            </ul>
+
             <div class="d-flex justify-content-between align-items-center mt-3">
               <span class="fw-bold text-primary">PKR - {{ course.price }}</span>
               <a href="{% url 'course_detail' course.id %}" class="btn btn-gradient btn-sm rounded-pill">Enroll Now</a>
@@ -36,9 +48,11 @@
           </div>
         </div>
       </div>
-
       {% endfor %}
     </div>
+
+
+
     <!-- View All Courses Button -->
     <div class="text-center mt-5">
       <a href="#" class="btn btn-gradient px-4 py-2 rounded-pill">View All Courses</a>

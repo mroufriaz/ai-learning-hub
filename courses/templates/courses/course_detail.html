@@ -28,7 +28,7 @@
                 <ul class="list-group list-group-flush rounded shadow-sm">
                     {% for point in course.points.all %}
                         <li class="list-group-item d-flex align-items-center">
-                            <i class="bi bi-check-circle-fill text-success me-2 fs-5"></i>
+                            <i class="fa-solid fa-circle-check text-success me-2 fs-5"></i>
                             <span class="fw-medium text-dark">{{ point.text }}</span>
                         </li>
                     {% empty %}
@@ -39,7 +39,9 @@
 
             <!-- CTA Section -->
             <div class="text-center my-5">
-                <a href="#" class="btn btn-gradient px-5 py-3 fw-bold rounded-pill shadow-lg">🚀 Enroll Now & Start Learning</a>
+                <a href="#" class="btn btn-gradient px-5 py-3 fw-bold rounded-pill shadow-lg">
+                    🚀 Enroll Now & Start Learning
+                </a>
             </div>
         </div>
 
@@ -47,25 +49,28 @@
         <div class="col-lg-4">
             <!-- Quick Info -->
             <div class="card shadow-lg border-0 p-4 rounded-4 mb-4">
-                <h5 class="fw-bold mb-3 text-primary">📌 Course Overview</h5>
+                <h5 class="fw-bold mb-3 text-primary"><i class="fa-solid fa-circle-info me-2"></i> Course Overview</h5>
                 <ul class="list-unstyled small">
-                    <li class="mb-3"><strong>⏳ Duration:</strong> {{ course.get_duration_display }}</li>
-                    <li class="mb-3"><strong>📈 Level:</strong> {{ course.get_level_display }}</li>
-                    <li class="mb-3"><strong>👨‍🏫 Instructor:</strong> {{ course.instructor }}</li>
-                    <li class="mb-3"><strong>🌐 Language:</strong> English / Urdu</li>
-                    <li><strong>📅 Created on:</strong> {{ course.created_at|date:"F d, Y" }}</li>
+                    <li class="mb-3"><i class="fa-regular fa-clock me-2 text-primary"></i><strong>Duration:</strong> {{ course.get_duration_display }}</li>
+                    <li class="mb-3"><i class="fa-solid fa-chart-line me-2 text-success"></i><strong>Level:</strong> {{ course.get_level_display }}</li>
+                    <li class="mb-3"><i class="fa-solid fa-user-tie me-2 text-dark"></i><strong>Instructor:</strong> {{ course.instructor }}</li>
+                    <li class="mb-3"><i class="fa-solid fa-globe me-2 text-info"></i><strong>Language:</strong> English / Urdu</li>
+                    <li><i class="fa-regular fa-calendar-days me-2 text-danger"></i><strong>Created on:</strong> {{ course.created_at|date:"F d, Y" }}</li>
                 </ul>
-                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">Join This Course</a>
+                <a href="#" class="btn btn-outline-primary w-100 mt-3 rounded-pill">
+                    <i class="fa-solid fa-user-plus me-2"></i> Join This Course
+                </a>
             </div>
 
             <!-- Related Courses -->
             <div class="card shadow-lg border-0 p-4 rounded-4">
-                <h5 class="fw-bold mb-3 text-primary">📚 Related Courses</h5>
+                <h5 class="fw-bold mb-3 text-primary"><i class="fa-solid fa-book-open-reader me-2"></i> Related Courses</h5>
                 <ul class="list-unstyled">
                     {% for related in related_courses %}
                         <li class="mb-3">
-                            <a href="{% url 'course_detail' related.id %}" class="text-decoration-none text-dark fw-medium d-flex align-items-center">
-                                <i class="bi bi-arrow-right-circle-fill text-primary me-2 fs-5"></i> 
+                            <a href="{% url 'course_detail' related.id %}" 
+                               class="text-decoration-none text-dark fw-medium d-flex align-items-center">
+                                <i class="fa-solid fa-angles-right text-primary me-2 fs-5"></i> 
                                 {{ related.title }}
                             </a>
                         </li>
