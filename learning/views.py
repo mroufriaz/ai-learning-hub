@@ -36,3 +36,5 @@ def login(request):
     return render( request, 'learning/login.html')
 
 
+def quiz(request):
+    return render( request, 'learning/quiz.html')

@@ -17,6 +17,7 @@
     <!-- Custom Stylesheet -->
     {% block styles %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
     <title>{% block title %}{% endblock title %}AI Learning Hub |</title>
     {% endblock styles %}
     {% endblock head %}

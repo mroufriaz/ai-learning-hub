@@ -11,6 +11,7 @@ urlpatterns = [
     path('resources/', views.resources, name='resources'),
     path('contact-us/', views.contact, name='contact'),
     path('about-us/', views.about, name='about'),
+    path('quiz/', views.quiz, name='quiz'),
     path('dashboard/', views.dashboard, name='dashboard'),
 
     path('login/', views.login, name='login'),
