@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: "./manage.py collectstatic --noinput"
+    startCommand: "gunicorn your_project_name.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: your_project_name.settings
+      - key: PYTHON_VERSION
+        value: 3.10
