@@ -35,11 +35,14 @@
                     <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
                 </li>
 
+                {% if user.is_authenticated %}
                 
 
                 <li class="nav-item mx-2">
                     <a class="nav-link text-white" href="{% url 'dashboard' %}">Dashboard</a>
                 </li>
+
+                {% else %}
 
                 <li class="nav-item ">
                     <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
@@ -48,6 +51,7 @@
                 <li class="nav-item ">
                     <a href="{% url 'signup' %}" class="nav-link text-white">Sign Up</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </div>
