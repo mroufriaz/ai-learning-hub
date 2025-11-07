@@ -1,0 +1,94 @@
+{% extends 'base_sidebar.html' %}
+{% load static %}
+{% block title %} Courses {% endblock title %}
+
+
+
+{% block sidebar_content %}
+<style>
+        body {
+            background: #f7f8fc;
+        }
+
+        .course-card {
+            transition: .3s;
+            border-radius: 10px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, .15);
+        }
+
+        .course-img {
+            height: 160px;
+            object-fit: cover;
+        }
+    </style>
+ <div class="container py-5">
+
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Available <span class="text-primary">Courses</span></h2>
+            <p class="text-muted">Choose a course and start your quiz</p>
+        </div>
+
+        <!-- Course Grid -->
+        <div class="row g-4">
+
+            <!-- Course Card -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm course-card">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Python Basics</h5>
+                        <p class="text-muted small">Learn Python fundamentals with hands-on practice.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-primary">10 Questions</span>
+                            <button class="btn btn-primary btn-sm rounded-pill">
+                                Attempt Quiz
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm course-card">
+                    <div class="card-body">
+                        <h5 class="fw-bold">AI Concepts</h5>
+                        <p class="text-muted small">Test your knowledge of AI fundamentals & ML basics.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-primary">15 Questions</span>
+                            <button class="btn btn-primary btn-sm rounded-pill">
+                                Attempt Quiz
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm course-card">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Computer Basics</h5>
+                        <p class="text-muted small">Perfect for beginners learning computer essentials.</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-primary">8 Questions</span>
+                            <button class="btn btn-primary btn-sm rounded-pill">
+                                Attempt Quiz
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock sidebar_content %}

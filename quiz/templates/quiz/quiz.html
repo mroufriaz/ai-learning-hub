@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Interactive Quiz{% endblock title %}
+
+{% block content %}
+
+<style>
+/* ---- Additional Professional Enhancements ---- */
+
+.option-btn {
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.option-btn:hover:not([disabled]) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102,16,242,0.25);
+}
+
+/* Ripple animation */
+.option-btn:active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(102,16,242,0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(15);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* Timer progress bar */
+.timer-bar {
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+    background: #e8e8e8;
+    overflow: hidden;
+    margin-top: -6px;
+    margin-bottom: 15px;
+}
+
+.timer-progress {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg,#6610f2,#b84ef5);
+    transition: width 1s linear;
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(10px);}
+    to { opacity:1; transform: translateY(0);}
+}
+
+.score-card h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+</style>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="card shadow-lg p-4 fade-in" style="width: 100%; max-width: 640px; border-radius: 22px;">
+        
+        <h3 class="text-center mb-2" style="color:#6610f2; font-weight:700;">
+            🧠 Interactive Quiz
+        </h3>
+        <p class="text-center text-muted mb-3">Test your knowledge in real-time</p>
+
+        <!-- Top Progress Info -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="badge bg-primary px-3 py-2" id="question-count">Question 1 / 10</span>
+            <span class="badge bg-dark px-3 py-2" id="timer">00:30</span>
+        </div>
+
+        <!-- Animated Timer Bar -->
+        <div class="timer-bar">
+            <div class="timer-progress" id="timerProgress"></div>
+        </div>
+
+        <!-- Question -->
+        <h5 id="question-text" class="mb-3 text-dark fw-bold">
+            Loading Question...
+        </h5>
+
+        <!-- Options -->
+        <div id="options-container" class="mb-3"></div>
+
+        <button class="btn btn-gradient w-100 mt-2" id="next-btn" disabled>
+            Next Question
+        </button>
+    </div>
+</div>
+
+<script>
+const questions = JSON.parse('{{ questions_json|escapejs }}');
+
+let index = 0;
+let score = 0;
+let time = 30;
+let timer;
+let answered = false;
+
+function loadQuestion() {
+    answered = false;
+    document.getElementById("question-text").innerHTML = questions[index].question;
+    document.getElementById("question-count").innerHTML = `Question ${index+1} / ${questions.length}`;
+
+    // Reset options
+    const optDiv = document.getElementById("options-container");
+    optDiv.innerHTML = "";
+
+    questions[index].options.forEach((opt, i)=>{
+        optDiv.innerHTML += `
+            <button onclick="selectOption(${i}, this)"
+            class="btn btn-outline-dark option-btn w-100 my-2" style="border-radius:13px;">
+                ${opt}
+            </button>
+        `
+    });
+
+    startTimer();
+}
+
+function selectOption(i, btn){
+    if(answered) return;
+    answered = true;
+
+    const correct = questions[index].answer;
+
+    document.querySelectorAll(".option-btn").forEach((b, idx)=>{
+        b.disabled = true;
+        if(idx === correct) b.classList.add("btn-success");
+    });
+
+    if(i === correct){
+        score++;
+        btn.classList.add("btn-success");
+    } else {
+        btn.classList.add("btn-danger");
+    }
+
+    document.getElementById("next-btn").disabled = false;
+    clearInterval(timer);
+}
+
+function startTimer(){
+    time = 30;
+    animateBar();
+    // format time with leading zero for seconds
+    document.getElementById("timer").innerText = `00:${time.toString().padStart(2,'0')}`;
+    clearInterval(timer);
+
+    timer = setInterval(()=>{
+        time--;
+        animateBar();
+        document.getElementById("timer").innerText = `00:${time.toString().padStart(2,'0')}`;
+        if(time <= 0){
+            clearInterval(timer);
+            // mark unanswered as wrong and reveal correct
+            const correct = questions[index].answer;
+            document.querySelectorAll(".option-btn").forEach((b, idx)=>{
+                b.disabled = true;
+                if(idx === correct) b.classList.add("btn-success");
+            });
+            document.getElementById("next-btn").disabled = false;
+        }
+    },1000)
+}
+
+function animateBar(){
+    document.getElementById("timerProgress").style.width = `${(time / 30) * 100}%`;
+}
+
+document.getElementById("next-btn").addEventListener("click", ()=>{
+    index++;
+    document.getElementById("next-btn").disabled = true;
+
+    if(index < questions.length){
+        loadQuestion();
+    } else {
+        showScore();
+    }
+});
+
+function showScore(){
+    document.querySelector(".card").innerHTML = `
+        <div class="score-card fade-in">
+            <h2 class="text-center">🎉 Quiz Completed!</h2>
+            <h4 class="text-center mt-2" style="color:#6610f2;">Final Score</h4>
+            <h1 class="text-center mb-3">${score} / ${questions.length}</h1>
+
+            <div class="text-center mb-3">
+                <span class="badge bg-success mx-1 px-3 py-2">Correct: ${score}</span>
+                <span class="badge bg-danger mx-1 px-3 py-2">Wrong: ${questions.length - score}</span>
+            </div>
+
+            <p class="text-center mt-2 fw-bold">
+                ${score === questions.length ? "🔥 Perfect! You're a genius!" :
+                  score >= questions.length/2 ? "😊 Great job!" :
+                  "📚 Keep practicing, you'll improve!"}
+            </p>
+
+            <a href="" class="btn btn-gradient w-100 mt-3">Try Again</a>
+        </div>
+    `;
+}
+
+if (!questions || questions.length === 0) {
+    document.querySelector(".card").innerHTML = `
+        <div class="p-4 text-center">
+            <h4>No questions available</h4>
+            <p>Add questions via Django admin to start the quiz.</p>
+            <a href="/admin/" class="btn btn-primary">Open Admin</a>
+        </div>
+    `;
+} else {
+    loadQuestion();
+}
+</script>
+
+{% endblock content %}

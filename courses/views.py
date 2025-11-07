@@ -31,3 +31,6 @@ def course_detail(request, course_id):
         'related_courses': related_courses
     }
     return render(request, 'courses/course_detail.html', context)
+
+def courses_sidebar(request):
+    return render(request, 'courses/courses_sidebar.html')
